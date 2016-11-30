@@ -819,6 +819,8 @@ obstical.h
 ../includes/obstical.h
 
 ../includes/obstical.h
+random
+-
 GL/glew.h
 -
 glm/glm.hpp
@@ -875,6 +877,8 @@ obstical.h
 /nfs/zfs-student-6/users/rojones/Documents/42run/includes/obstical.h
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/includes/obstical.h
+random
+-
 GL/glew.h
 -
 glm/glm.hpp
@@ -919,10 +923,6 @@ vector
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/obstical.cpp
 obstical.h
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/obstical.h
-
-/nfs/zfs-student-6/users/rojones/Documents/42run/src/ogl.cpp
-../includes/42run.h
-/nfs/zfs-student-6/users/rojones/Documents/42run/includes/42run.h
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/player.cpp
 player.h

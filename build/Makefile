@@ -231,33 +231,6 @@ src/obstical.cpp.s:
 	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/obstical.cpp.s
 .PHONY : src/obstical.cpp.s
 
-src/ogl.o: src/ogl.cpp.o
-
-.PHONY : src/ogl.o
-
-# target to build an object file
-src/ogl.cpp.o:
-	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/ogl.cpp.o
-.PHONY : src/ogl.cpp.o
-
-src/ogl.i: src/ogl.cpp.i
-
-.PHONY : src/ogl.i
-
-# target to preprocess a source file
-src/ogl.cpp.i:
-	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/ogl.cpp.i
-.PHONY : src/ogl.cpp.i
-
-src/ogl.s: src/ogl.cpp.s
-
-.PHONY : src/ogl.s
-
-# target to generate assembly for a file
-src/ogl.cpp.s:
-	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/ogl.cpp.s
-.PHONY : src/ogl.cpp.s
-
 src/player.o: src/player.cpp.o
 
 .PHONY : src/player.o
@@ -360,9 +333,6 @@ help:
 	@echo "... src/obstical.o"
 	@echo "... src/obstical.i"
 	@echo "... src/obstical.s"
-	@echo "... src/ogl.o"
-	@echo "... src/ogl.i"
-	@echo "... src/ogl.s"
 	@echo "... src/player.o"
 	@echo "... src/player.i"
 	@echo "... src/player.s"

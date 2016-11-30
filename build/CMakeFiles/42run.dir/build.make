@@ -105,33 +105,9 @@ CMakeFiles/42run.dir/src/load_shader.cpp.o.provides: CMakeFiles/42run.dir/src/lo
 CMakeFiles/42run.dir/src/load_shader.cpp.o.provides.build: CMakeFiles/42run.dir/src/load_shader.cpp.o
 
 
-CMakeFiles/42run.dir/src/ogl.cpp.o: CMakeFiles/42run.dir/flags.make
-CMakeFiles/42run.dir/src/ogl.cpp.o: ../src/ogl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/42run.dir/src/ogl.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/42run.dir/src/ogl.cpp.o -c /nfs/zfs-student-6/users/rojones/Documents/42run/src/ogl.cpp
-
-CMakeFiles/42run.dir/src/ogl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/42run.dir/src/ogl.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /nfs/zfs-student-6/users/rojones/Documents/42run/src/ogl.cpp > CMakeFiles/42run.dir/src/ogl.cpp.i
-
-CMakeFiles/42run.dir/src/ogl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/42run.dir/src/ogl.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /nfs/zfs-student-6/users/rojones/Documents/42run/src/ogl.cpp -o CMakeFiles/42run.dir/src/ogl.cpp.s
-
-CMakeFiles/42run.dir/src/ogl.cpp.o.requires:
-
-.PHONY : CMakeFiles/42run.dir/src/ogl.cpp.o.requires
-
-CMakeFiles/42run.dir/src/ogl.cpp.o.provides: CMakeFiles/42run.dir/src/ogl.cpp.o.requires
-	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/ogl.cpp.o.provides.build
-.PHONY : CMakeFiles/42run.dir/src/ogl.cpp.o.provides
-
-CMakeFiles/42run.dir/src/ogl.cpp.o.provides.build: CMakeFiles/42run.dir/src/ogl.cpp.o
-
-
 CMakeFiles/42run.dir/src/support.cpp.o: CMakeFiles/42run.dir/flags.make
 CMakeFiles/42run.dir/src/support.cpp.o: ../src/support.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/42run.dir/src/support.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/42run.dir/src/support.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/42run.dir/src/support.cpp.o -c /nfs/zfs-student-6/users/rojones/Documents/42run/src/support.cpp
 
 CMakeFiles/42run.dir/src/support.cpp.i: cmake_force
@@ -155,7 +131,7 @@ CMakeFiles/42run.dir/src/support.cpp.o.provides.build: CMakeFiles/42run.dir/src/
 
 CMakeFiles/42run.dir/src/obj_loader.cpp.o: CMakeFiles/42run.dir/flags.make
 CMakeFiles/42run.dir/src/obj_loader.cpp.o: ../src/obj_loader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/42run.dir/src/obj_loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/42run.dir/src/obj_loader.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/42run.dir/src/obj_loader.cpp.o -c /nfs/zfs-student-6/users/rojones/Documents/42run/src/obj_loader.cpp
 
 CMakeFiles/42run.dir/src/obj_loader.cpp.i: cmake_force
@@ -179,7 +155,7 @@ CMakeFiles/42run.dir/src/obj_loader.cpp.o.provides.build: CMakeFiles/42run.dir/s
 
 CMakeFiles/42run.dir/src/player.cpp.o: CMakeFiles/42run.dir/flags.make
 CMakeFiles/42run.dir/src/player.cpp.o: ../src/player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/42run.dir/src/player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/42run.dir/src/player.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/42run.dir/src/player.cpp.o -c /nfs/zfs-student-6/users/rojones/Documents/42run/src/player.cpp
 
 CMakeFiles/42run.dir/src/player.cpp.i: cmake_force
@@ -203,7 +179,7 @@ CMakeFiles/42run.dir/src/player.cpp.o.provides.build: CMakeFiles/42run.dir/src/p
 
 CMakeFiles/42run.dir/src/room.cpp.o: CMakeFiles/42run.dir/flags.make
 CMakeFiles/42run.dir/src/room.cpp.o: ../src/room.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/42run.dir/src/room.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/42run.dir/src/room.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/42run.dir/src/room.cpp.o -c /nfs/zfs-student-6/users/rojones/Documents/42run/src/room.cpp
 
 CMakeFiles/42run.dir/src/room.cpp.i: cmake_force
@@ -227,7 +203,7 @@ CMakeFiles/42run.dir/src/room.cpp.o.provides.build: CMakeFiles/42run.dir/src/roo
 
 CMakeFiles/42run.dir/src/obstical.cpp.o: CMakeFiles/42run.dir/flags.make
 CMakeFiles/42run.dir/src/obstical.cpp.o: ../src/obstical.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/42run.dir/src/obstical.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/42run.dir/src/obstical.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/42run.dir/src/obstical.cpp.o -c /nfs/zfs-student-6/users/rojones/Documents/42run/src/obstical.cpp
 
 CMakeFiles/42run.dir/src/obstical.cpp.i: cmake_force
@@ -253,7 +229,6 @@ CMakeFiles/42run.dir/src/obstical.cpp.o.provides.build: CMakeFiles/42run.dir/src
 42run_OBJECTS = \
 "CMakeFiles/42run.dir/src/main.cpp.o" \
 "CMakeFiles/42run.dir/src/load_shader.cpp.o" \
-"CMakeFiles/42run.dir/src/ogl.cpp.o" \
 "CMakeFiles/42run.dir/src/support.cpp.o" \
 "CMakeFiles/42run.dir/src/obj_loader.cpp.o" \
 "CMakeFiles/42run.dir/src/player.cpp.o" \
@@ -265,7 +240,6 @@ CMakeFiles/42run.dir/src/obstical.cpp.o.provides.build: CMakeFiles/42run.dir/src
 
 42run: CMakeFiles/42run.dir/src/main.cpp.o
 42run: CMakeFiles/42run.dir/src/load_shader.cpp.o
-42run: CMakeFiles/42run.dir/src/ogl.cpp.o
 42run: CMakeFiles/42run.dir/src/support.cpp.o
 42run: CMakeFiles/42run.dir/src/obj_loader.cpp.o
 42run: CMakeFiles/42run.dir/src/player.cpp.o
@@ -274,8 +248,9 @@ CMakeFiles/42run.dir/src/obstical.cpp.o.provides.build: CMakeFiles/42run.dir/src
 42run: CMakeFiles/42run.dir/build.make
 42run: ../Framework/Glfw/lib/libglfw3.a
 42run: ../Framework/Glew/lib/libGLEW.a
+42run: ../Framework/ftgl/lib/libftgl.a
 42run: CMakeFiles/42run.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable 42run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable 42run"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/42run.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -285,7 +260,6 @@ CMakeFiles/42run.dir/build: 42run
 
 CMakeFiles/42run.dir/requires: CMakeFiles/42run.dir/src/main.cpp.o.requires
 CMakeFiles/42run.dir/requires: CMakeFiles/42run.dir/src/load_shader.cpp.o.requires
-CMakeFiles/42run.dir/requires: CMakeFiles/42run.dir/src/ogl.cpp.o.requires
 CMakeFiles/42run.dir/requires: CMakeFiles/42run.dir/src/support.cpp.o.requires
 CMakeFiles/42run.dir/requires: CMakeFiles/42run.dir/src/obj_loader.cpp.o.requires
 CMakeFiles/42run.dir/requires: CMakeFiles/42run.dir/src/player.cpp.o.requires
