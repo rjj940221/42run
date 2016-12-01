@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/nfs/zfs-student-6/users/rojones/Documents/42run/src/flaw.cpp" "/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles/42run.dir/src/flaw.cpp.o"
   "/nfs/zfs-student-6/users/rojones/Documents/42run/src/load_shader.cpp" "/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles/42run.dir/src/load_shader.cpp.o"
   "/nfs/zfs-student-6/users/rojones/Documents/42run/src/main.cpp" "/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles/42run.dir/src/main.cpp.o"
   "/nfs/zfs-student-6/users/rojones/Documents/42run/src/obj_loader.cpp" "/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles/42run.dir/src/obj_loader.cpp.o"
+  "/nfs/zfs-student-6/users/rojones/Documents/42run/src/object.cpp" "/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles/42run.dir/src/object.cpp.o"
   "/nfs/zfs-student-6/users/rojones/Documents/42run/src/obstical.cpp" "/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles/42run.dir/src/obstical.cpp.o"
   "/nfs/zfs-student-6/users/rojones/Documents/42run/src/player.cpp" "/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles/42run.dir/src/player.cpp.o"
-  "/nfs/zfs-student-6/users/rojones/Documents/42run/src/room.cpp" "/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles/42run.dir/src/room.cpp.o"
   "/nfs/zfs-student-6/users/rojones/Documents/42run/src/support.cpp" "/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles/42run.dir/src/support.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
@@ -19,7 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../Framework/Glfw/include"
   "../Framework/Glew/include"
   "../Framework/glm/include"
-  "../Framework/ftgl/include"
+  "../Framework/FreeType/include/freetype2"
   "../includes"
   )
 

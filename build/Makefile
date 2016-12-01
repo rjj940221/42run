@@ -123,6 +123,33 @@ depend:
 	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/build
 .PHONY : 42run/fast
 
+src/flaw.o: src/flaw.cpp.o
+
+.PHONY : src/flaw.o
+
+# target to build an object file
+src/flaw.cpp.o:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/flaw.cpp.o
+.PHONY : src/flaw.cpp.o
+
+src/flaw.i: src/flaw.cpp.i
+
+.PHONY : src/flaw.i
+
+# target to preprocess a source file
+src/flaw.cpp.i:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/flaw.cpp.i
+.PHONY : src/flaw.cpp.i
+
+src/flaw.s: src/flaw.cpp.s
+
+.PHONY : src/flaw.s
+
+# target to generate assembly for a file
+src/flaw.cpp.s:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/flaw.cpp.s
+.PHONY : src/flaw.cpp.s
+
 src/load_shader.o: src/load_shader.cpp.o
 
 .PHONY : src/load_shader.o
@@ -204,6 +231,33 @@ src/obj_loader.cpp.s:
 	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/obj_loader.cpp.s
 .PHONY : src/obj_loader.cpp.s
 
+src/object.o: src/object.cpp.o
+
+.PHONY : src/object.o
+
+# target to build an object file
+src/object.cpp.o:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/object.cpp.o
+.PHONY : src/object.cpp.o
+
+src/object.i: src/object.cpp.i
+
+.PHONY : src/object.i
+
+# target to preprocess a source file
+src/object.cpp.i:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/object.cpp.i
+.PHONY : src/object.cpp.i
+
+src/object.s: src/object.cpp.s
+
+.PHONY : src/object.s
+
+# target to generate assembly for a file
+src/object.cpp.s:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/object.cpp.s
+.PHONY : src/object.cpp.s
+
 src/obstical.o: src/obstical.cpp.o
 
 .PHONY : src/obstical.o
@@ -258,33 +312,6 @@ src/player.cpp.s:
 	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/player.cpp.s
 .PHONY : src/player.cpp.s
 
-src/room.o: src/room.cpp.o
-
-.PHONY : src/room.o
-
-# target to build an object file
-src/room.cpp.o:
-	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/room.cpp.o
-.PHONY : src/room.cpp.o
-
-src/room.i: src/room.cpp.i
-
-.PHONY : src/room.i
-
-# target to preprocess a source file
-src/room.cpp.i:
-	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/room.cpp.i
-.PHONY : src/room.cpp.i
-
-src/room.s: src/room.cpp.s
-
-.PHONY : src/room.s
-
-# target to generate assembly for a file
-src/room.cpp.s:
-	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/room.cpp.s
-.PHONY : src/room.cpp.s
-
 src/support.o: src/support.cpp.o
 
 .PHONY : src/support.o
@@ -321,6 +348,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 42run"
+	@echo "... src/flaw.o"
+	@echo "... src/flaw.i"
+	@echo "... src/flaw.s"
 	@echo "... src/load_shader.o"
 	@echo "... src/load_shader.i"
 	@echo "... src/load_shader.s"
@@ -330,15 +360,15 @@ help:
 	@echo "... src/obj_loader.o"
 	@echo "... src/obj_loader.i"
 	@echo "... src/obj_loader.s"
+	@echo "... src/object.o"
+	@echo "... src/object.i"
+	@echo "... src/object.s"
 	@echo "... src/obstical.o"
 	@echo "... src/obstical.i"
 	@echo "... src/obstical.s"
 	@echo "... src/player.o"
 	@echo "... src/player.i"
 	@echo "... src/player.s"
-	@echo "... src/room.o"
-	@echo "... src/room.i"
-	@echo "... src/room.s"
 	@echo "... src/support.o"
 	@echo "... src/support.i"
 	@echo "... src/support.s"
