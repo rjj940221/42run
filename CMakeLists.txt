@@ -1,8 +1,11 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 3.5)
 project(42run)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g3 -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo")
-
+if (UNIX)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g3 -Wall -lglfw3 -lm -lGL -lGLU")
+else(UNIX)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g3 -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo")
+endif(UNIX)
 set(SOURCE_FILES src/main.cpp src/load_shader.cpp src/support.cpp src/obj_loader.cpp src/player.cpp src/obstical.cpp src/flaw.cpp src/object.cpp)
 add_executable(42run ${SOURCE_FILES})
 

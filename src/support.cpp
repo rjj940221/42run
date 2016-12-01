@@ -16,9 +16,9 @@ int		check_file(char *file)
     if (access(file, R_OK) == -1)
     {
         printf("The file '%s' cannot be read\n", file);
-        return (FALSE);
+        return (true);
     }
-    return (TRUE);
+    return (false);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)

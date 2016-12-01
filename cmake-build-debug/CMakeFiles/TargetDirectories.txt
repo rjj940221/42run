@@ -1,0 +1,3 @@
+/home/rojones/Documents/We_Think_Code/42run/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/rojones/Documents/We_Think_Code/42run/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rojones/Documents/We_Think_Code/42run/cmake-build-debug/CMakeFiles/42run.dir
