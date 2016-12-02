@@ -55,17 +55,42 @@ protected:
     GLfloat x;
     GLfloat y;
     GLfloat z;
+    GLfloat rotateX;
+    GLfloat rotateY;
+    GLfloat rotateZ;
     glm::mat4 model;
     GLuint bufferID;
     int numFace;
 public:
+    Object();
+
     GLfloat getX() { return (x); };
 
     GLfloat getY() { return (y); };
 
     GLfloat getZ() { return (z); };
 
-    void render(GLint matrixID, GLint modleID, GLuint lightColID, GLuint lightPosID, GLuint textureID, glm::vec3 lightColor, glm::vec3 lightPos);
+    GLfloat getRotateX() { return (rotateX); };
+
+    GLfloat getRotateY() { return (rotateY); };
+
+    GLfloat getRotateZ() { return (rotateZ); };
+
+    void setX(GLfloat val) { x = val; };
+
+    void setY(GLfloat val) { y = val; };
+
+    void setZ(GLfloat val) { z = val; };
+
+    void setRotateX(GLfloat val) { rotateX = val; };
+
+    void setRotateY(GLfloat val) { rotateY = val; };
+
+    void setRotateZ(GLfloat val) { rotateZ = val; };
+
+    void
+    render(GLint isTexturedID, GLint matrixID, GLint modelID, GLuint lightColID, GLuint lightPosID, GLuint viewPosID,
+           GLuint textureID, glm::vec3 lightColor, glm::vec3 lightPos, glm::vec3 viewPos, int isTextured);
 
     virtual ~Object() {};
 };
