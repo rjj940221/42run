@@ -64,6 +64,8 @@ GL/glext.h
 GL/glu.h
 -
 
+../Framework/Soil/include/SOIL.h
+
 ../Framework/glm/include/glm/common.hpp
 detail/func_common.hpp
 ../Framework/glm/include/glm/detail/func_common.hpp
@@ -815,6 +817,8 @@ GLFW/glfw3.h
 -
 ft2build.h
 -
+SOIL.h
+-
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp
@@ -825,7 +829,27 @@ map
 -
 
 ../includes/support.h
-libc.h
+unistd.h
+-
+string.h
+-
+pthread.h
+-
+string.h
+-
+sys/types.h
+-
+sys/uio.h
+-
+wchar.h
+-
+stdarg.h
+-
+inttypes.h
+-
+stdlib.h
+-
+stdio.h
 -
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/includes/42run.h
@@ -845,6 +869,8 @@ GLFW/glfw3.h
 -
 ft2build.h
 -
+SOIL.h
+-
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp
@@ -855,7 +881,27 @@ map
 -
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/includes/support.h
-libc.h
+unistd.h
+-
+string.h
+-
+pthread.h
+-
+string.h
+-
+sys/types.h
+-
+sys/uio.h
+-
+wchar.h
+-
+stdarg.h
+-
+inttypes.h
+-
+stdlib.h
+-
+stdio.h
 -
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/flaw.cpp

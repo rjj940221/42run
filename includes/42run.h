@@ -17,6 +17,7 @@
 // GLFW
 #include <GLFW/glfw3.h>
 #include <ft2build.h>
+#include <SOIL.h>
 #include FT_FREETYPE_H
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -54,7 +55,7 @@ protected:
     GLfloat x;
     GLfloat y;
     GLfloat z;
-    glm::mat4 modle;
+    glm::mat4 model;
     GLuint bufferID;
     int numFace;
 public:
@@ -64,7 +65,7 @@ public:
 
     GLfloat getZ() { return (z); };
 
-    void render(GLint matrixID);
+    void render(GLint matrixID, GLint modleID, GLuint lightColID, GLuint lightPosID, GLuint textureID, glm::vec3 lightColor, glm::vec3 lightPos);
 
     virtual ~Object() {};
 };
@@ -120,7 +121,7 @@ public:
 
     bool getActive() { return (active); };
 
-    ~Flaw(){};
+    ~Flaw() {};
 };
 
 void player_key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
@@ -135,5 +136,6 @@ void save_ascii();
 
 void RenderText(GLuint programID, std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color);
 
+GLuint load_texture(std::string file);
 
 #endif //INC_42RUN_42RUN_H

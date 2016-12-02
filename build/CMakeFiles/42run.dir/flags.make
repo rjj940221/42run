@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -g3 -framework OpenGL -framework Cocoa -framework IOKit 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/nfs/zfs-student-6/users/rojones/Documents/42run/Framework/Glfw/include -I/nfs/zfs-student-6/users/rojones/Documents/42run/Framework/Glew/include -I/nfs/zfs-student-6/users/rojones/Documents/42run/Framework/glm/include -I/nfs/zfs-student-6/users/rojones/Documents/42run/Framework/FreeType/include/freetype2 -I/nfs/zfs-student-6/users/rojones/Documents/42run/includes 
+CXX_INCLUDES = -I/nfs/zfs-student-6/users/rojones/Documents/42run/Framework/Glfw/include -I/nfs/zfs-student-6/users/rojones/Documents/42run/Framework/Glew/include -I/nfs/zfs-student-6/users/rojones/Documents/42run/Framework/glm/include -I/nfs/zfs-student-6/users/rojones/Documents/42run/Framework/Soil/include -I/nfs/zfs-student-6/users/rojones/Documents/42run/Framework/FreeType/include/freetype2 -I/nfs/zfs-student-6/users/rojones/Documents/42run/includes 
 

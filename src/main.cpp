@@ -7,7 +7,7 @@ Player *myPlayer;
 int UPDATES_SECOND = 60;
 GLFWwindow *g_window;
 //FTGLPixmapFont g_font("/home/user/Arial.ttf");
-mat4 g_projection = glm::perspective(glm::radians(60.0f), (float) WIDTH / (float) HEIGHT, 0.1f, 100.0f);
+mat4 g_projection = glm::perspective(glm::radians(60.0f), (float) WIDTH / (float) HEIGHT, 0.1f, 500.0f);
 glm::mat4 g_textProjection = glm::ortho(0.0f, static_cast<GLfloat>(WIDTH), 0.0f, static_cast<GLfloat>(HEIGHT));
 mat4 g_view = glm::lookAt(glm::vec3(0, 2, -6), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 map<GLchar, t_char> Characters;
@@ -18,55 +18,55 @@ GLuint g_textBufferID;
 GLuint g_textProgramID;
 
 t_buffer_element g_vertex_buffer_obstical[] = {
-        {{-1.0f, -1.0f, -1.0f}, {0.583f, 0.771f, 0.014f},  {}, {}},
-        {{-1.0f, -1.0f, 1.0f},  {0.609f, 0.115f, 0.436f},  {}, {}},
-        {{-1.0f, 1.0f,  1.0f},  {0.327f, 0.483f, 0.844f},  {}, {}}, // triangle 1 : end
-        {{1.0f,  1.0f,  -1.0f}, {0.822f, 0.569f, 0.201f},  {}, {}}, // triangle 2 : begin
-        {{-1.0f, -1.0f, -1.0f}, {0.435f, 0.602f, 0.223f},  {}, {}},
-        {{-1.0f, 1.0f,  -1.0f}, {0.310f, 0.747f, 0.185f},  {}, {}}, // triangle 2 : end
-        {{1.0f,  -1.0f, 1.0f},  {0.310f, 0.747f, 0.185f},  {}, {}},
-        {{-1.0f, -1.0f, -1.0f}, {0.597f, 0.770f, 0.761f},  {}, {}},
-        {{1.0f,  -1.0f, -1.0f}, {0.559f, 0.436f, 0.730f},  {}, {}},
-        {{1.0f,  1.0f,  -1.0f}, {0.359f, 0.583f, 0.152f},  {}, {}},
-        {{1.0f,  -1.0f, -1.0f}, {0.483f, 0.596f, 0.789f},  {}, {}},
-        {{-1.0f, -1.0f, -1.0f}, {0.559f, 0.861f, 0.639f},  {}, {}},
-        {{-1.0f, -1.0f, -1.0f}, {0.195f, 0.548f, 0.859f},  {}, {}},
-        {{-1.0f, 1.0f,  1.0f},  {0.014f, 0.184f, 0.576f},  {}, {}},
-        {{-1.0f, 1.0f,  -1.0f}, {0.771f, 0.328f, 0.970f},  {}, {}},
-        {{1.0f,  -1.0f, 1.0f},  {0.406f, 0.615f, 0.116f},  {}, {}},
-        {{-1.0f, -1.0f, 1.0f},  {0.676f, 0.977f, 0.133f},  {}, {}},
-        {{-1.0f, -1.0f, -1.0f}, {0.971f, 0.572f, 0.833f},  {}, {}},
-        {{-1.0f, 1.0f,  1.0f},  {0.140f, 0.616f, 0.489f},  {}, {}},
-        {{-1.0f, -1.0f, 1.0f},  {0.997f, 0.513f, 0.064f},  {}, {}},
-        {{1.0f,  -1.0f, 1.0f},  {0.945f, 0.719f, 0.592f},  {}, {}},
-        {{1.0f,  1.0f,  1.0f},  {0.543f, 0.021f, 0.978f,}, {}, {}},
-        {{1.0f,  -1.0f, -1.0f}, {0.279f, 0.317f, 0.505f,}, {}, {}},
-        {{1.0f,  1.0f,  -1.0f}, {0.167f, 0.620f, 0.077f},  {}, {}},
-        {{1.0f,  -1.0f, -1.0f}, {0.347f, 0.857f, 0.137f},  {}, {}},
-        {{1.0f,  1.0f,  1.0f},  {0.055f, 0.953f, 0.042f},  {}, {}},
-        {{1.0f,  -1.0f, 1.0f},  {0.714f, 0.505f, 0.345f},  {}, {}},
-        {{1.0f,  1.0f,  1.0f},  {0.783f, 0.290f, 0.734f},  {}, {}},
-        {{1.0f,  1.0f,  -1.0f}, {0.722f, 0.645f, 0.174f},  {}, {}},
-        {{-1.0f, 1.0f,  -1.0f}, {0.302f, 0.455f, 0.848f},  {}, {}},
-        {{1.0f,  1.0f,  1.0f},  {0.225f, 0.587f, 0.040f},  {}, {}},
-        {{-1.0f, 1.0f,  -1.0f}, {0.517f, 0.713f, 0.338f},  {}, {}},
-        {{-1.0f, 1.0f,  1.0f},  {0.053f, 0.959f, 0.120f},  {}, {}},
-        {{1.0f,  1.0f,  1.0f},  {0.393f, 0.621f, 0.362f},  {}, {}},
-        {{-1.0f, 1.0f,  1.0f},  {0.673f, 0.211f, 0.457f},  {}, {}},
-        {{1.0f,  -1.0f, 1.0f},  {0.820f, 0.883f, 0.371f},  {}, {}}
+        {{-1.0f, -1.0f, -1.0f}, {0.583f, 0.771f, 0.014f}, {}, {}},
+        {{-1.0f, -1.0f, 1.0f},  {0.609f, 0.115f, 0.436f}, {}, {}},
+        {{-1.0f, 1.0f,  1.0f},  {0.327f, 0.483f, 0.844f}, {}, {}},
+        {{1.0f,  1.0f,  -1.0f}, {0.822f, 0.569f, 0.201f}, {}, {}},
+        {{-1.0f, -1.0f, -1.0f}, {0.435f, 0.602f, 0.223f}, {}, {}},
+        {{-1.0f, 1.0f,  -1.0f}, {0.310f, 0.747f, 0.185f}, {}, {}},
+        {{1.0f,  -1.0f, 1.0f},  {0.310f, 0.747f, 0.185f}, {}, {}},
+        {{-1.0f, -1.0f, -1.0f}, {0.597f, 0.770f, 0.761f}, {}, {}},
+        {{1.0f,  -1.0f, -1.0f}, {0.559f, 0.436f, 0.730f}, {}, {}},
+        {{1.0f,  1.0f,  -1.0f}, {0.359f, 0.583f, 0.152f}, {}, {}},
+        {{1.0f,  -1.0f, -1.0f}, {0.483f, 0.596f, 0.789f}, {}, {}},
+        {{-1.0f, -1.0f, -1.0f}, {0.559f, 0.861f, 0.639f}, {}, {}},
+        {{-1.0f, -1.0f, -1.0f}, {0.195f, 0.548f, 0.859f}, {}, {}},
+        {{-1.0f, 1.0f,  1.0f},  {0.014f, 0.184f, 0.576f}, {}, {}},
+        {{-1.0f, 1.0f,  -1.0f}, {0.771f, 0.328f, 0.970f}, {}, {}},
+        {{1.0f,  -1.0f, 1.0f},  {0.406f, 0.615f, 0.116f}, {}, {}},
+        {{-1.0f, -1.0f, 1.0f},  {0.676f, 0.977f, 0.133f}, {}, {}},
+        {{-1.0f, -1.0f, -1.0f}, {0.971f, 0.572f, 0.833f}, {}, {}},
+        {{-1.0f, 1.0f,  1.0f},  {0.140f, 0.616f, 0.489f}, {}, {}},
+        {{-1.0f, -1.0f, 1.0f},  {0.997f, 0.513f, 0.064f}, {}, {}},
+        {{1.0f,  -1.0f, 1.0f},  {0.945f, 0.719f, 0.592f}, {}, {}},
+        {{1.0f,  1.0f,  1.0f},  {0.543f, 0.021f, 0.978f}, {}, {}},
+        {{1.0f,  -1.0f, -1.0f}, {0.279f, 0.317f, 0.505f}, {}, {}},
+        {{1.0f,  1.0f,  -1.0f}, {0.167f, 0.620f, 0.077f}, {}, {}},
+        {{1.0f,  -1.0f, -1.0f}, {0.347f, 0.857f, 0.137f}, {}, {}},
+        {{1.0f,  1.0f,  1.0f},  {0.055f, 0.953f, 0.042f}, {}, {}},
+        {{1.0f,  -1.0f, 1.0f},  {0.714f, 0.505f, 0.345f}, {}, {}},
+        {{1.0f,  1.0f,  1.0f},  {0.783f, 0.290f, 0.734f}, {}, {}},
+        {{1.0f,  1.0f,  -1.0f}, {0.722f, 0.645f, 0.174f}, {}, {}},
+        {{-1.0f, 1.0f,  -1.0f}, {0.302f, 0.455f, 0.848f}, {}, {}},
+        {{1.0f,  1.0f,  1.0f},  {0.225f, 0.587f, 0.040f}, {}, {}},
+        {{-1.0f, 1.0f,  -1.0f}, {0.517f, 0.713f, 0.338f}, {}, {}},
+        {{-1.0f, 1.0f,  1.0f},  {0.053f, 0.959f, 0.120f}, {}, {}},
+        {{1.0f,  1.0f,  1.0f},  {0.393f, 0.621f, 0.362f}, {}, {}},
+        {{-1.0f, 1.0f,  1.0f},  {0.673f, 0.211f, 0.457f}, {}, {}},
+        {{1.0f,  -1.0f, 1.0f},  {0.820f, 0.883f, 0.371f}, {}, {}}
 };
 t_buffer_element g_vertex_buffer_player[] = {
-        {{-1.0f, -1.0f, 0.0f}, {0.0f, 0.0f, 1.0f}, {1, 1, 1}, {0, 0}},
-        {{1.0f,  -1.0f, 0.0f}, {0.0f, 0.0f, 1.0f}, {1, 1, 1}, {0, 0}},
-        {{0.0f,  1.0f,  0.0f}, {0.0f, 0.0f, 1.0f}, {1, 1, 1}, {0, 0}}
+        {{-1.0f, -1.0f, 0.0f}, {0.0f, 0.0f, 1.0f}, {1, 0, 0}, {0, 0}},
+        {{1.0f,  -1.0f, 0.0f}, {0.0f, 0.0f, 1.0f}, {0, 1, 0}, {0, 0}},
+        {{0.0f,  1.0f,  0.0f}, {0.0f, 0.0f, 1.0f}, {0, 0, 1}, {0, 0}}
 };
 t_buffer_element g_vertex_buffer_surface[] = {
-        {{3.0f,  0.0f, 3.0f},  {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {1, 0}},
-        {{-3.0f, 0.0f, -3.0f}, {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {0, 1}},
-        {{-3.0f, 0.0f, 3.0f},  {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {0, 0}},
-        {{3.0f,  0.0f, 3.0f},  {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {1, 0}},
-        {{3.0f,  0.0f, -3.0f}, {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {1, 1}},
-        {{-3.0f, 0.0f, -3.0f}, {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {0, 1}},
+        {{3.0f,  0.0f, 3.0f},  {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {0.99, 0.01}},
+        {{-3.0f, 0.0f, -3.0f}, {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {0.01, 0.99}},
+        {{-3.0f, 0.0f, 3.0f},  {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {0.01, 0.01}},
+        {{3.0f,  0.0f, 3.0f},  {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {0.99, 0.01}},
+        {{3.0f,  0.0f, -3.0f}, {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {0.99, 0.99}},
+        {{-3.0f, 0.0f, -3.0f}, {0.0f, 1.0f, 0.0f}, {1, 1, 1}, {0.01, 0.99}},
 };
 
 bool init() {
@@ -134,8 +134,9 @@ GLuint bind_data(t_buffer_element *data, int size) {
     glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
     glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(t_buffer_element), (void *) 0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(t_buffer_element),
-                          (void *) (offsetof(t_buffer_element, color)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(t_buffer_element), (void *) (offsetof(t_buffer_element, color)));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(t_buffer_element), (void *) (offsetof(t_buffer_element, text)));
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(t_buffer_element), (void *) (offsetof(t_buffer_element, normal)));
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
@@ -151,7 +152,13 @@ int main(void) {
     GLuint playerArrayID;
     GLuint surfaceArrayID;
     GLuint programID;
+    GLuint textureProgramID;
     GLint matrixID;
+    GLint lightColID;
+    GLint lightPosID;
+    GLint texturMatrixID;
+    GLint modelID;
+    GLuint texturID;
     vector<Obstical> incomming;
     vector<Flaw> flaw;
 
@@ -163,47 +170,50 @@ int main(void) {
     playerArrayID = bind_data(g_vertex_buffer_player, sizeof(g_vertex_buffer_player));
     surfaceArrayID = bind_data(g_vertex_buffer_surface, sizeof(g_vertex_buffer_surface));
     myPlayer = new Player(playerArrayID, 3);
-    for (int i = 0; i < 100; i += 3) {
+    for (int i = 0; i <= 120; i += 6) {
         Flaw *nFlaw = new Flaw(surfaceArrayID, 6, i);
         flaw.push_back(*nFlaw);
     }
-    cout << "size of flaw: " << flaw.size();
-
     programID = LoadShaders("vertex.glsl", "fragment.glsl");
     matrixID = glGetUniformLocation(programID, "MVP");
+    modelID = glGetUniformLocation(programID, "model");
+    lightColID = glGetUniformLocation(programID, "lightColor");
+    lightPosID = glGetUniformLocation(programID, "lightPos");
+    textureProgramID = LoadShaders("textureVertex.glsl", "textureFragment.glsl");
+    texturMatrixID = glGetUniformLocation(textureProgramID, "MVP");
+    texturID = load_texture("parkay.jpeg");
     glEnable(GL_DEPTH_TEST);
     glfwSetKeyCallback(g_window, player_key_callback);
     lastTime = glfwGetTime();
     deltaTime = 0.0f;
-    //glDepthFunc(GL_LESS);
     do {
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         RenderText(g_textProgramID, to_string(myPlayer->getDist()), 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
         glUseProgram(programID);
-        //glBindVertexArray(VertexArrayID);
         deltaTime += (glfwGetTime() - lastTime) * UPDATES_SECOND;
         lastTime = glfwGetTime();
-        for (vector<Obstical>::iterator it = incomming.begin(); it != incomming.end(); it++)
-            it->render(matrixID);
-        for (vector<Flaw>::iterator it = flaw.begin(); it != flaw.end(); it++) {
-            it->render(matrixID);
-        }
-        myPlayer->render(matrixID);
+        for (vector<Obstical>::iterator it = incomming.begin(); it < incomming.end(); it++)
+            it->render(matrixID, modelID, lightColID, lightPosID, 0, vec3(0,1,1), vec3(0, 4, 0));
+        glUseProgram(textureProgramID);
+        for (vector<Flaw>::iterator it = flaw.begin(); it < flaw.end(); it++)
+            it->render(texturMatrixID, -1, -1, -1,texturID, vec3(0,0,0), vec3(0,0,0));
+        glUseProgram(programID);
+        myPlayer->render(matrixID, modelID, lightColID, lightPosID, 0, vec3(0,1,1), vec3(0, 4, 0));
         while (deltaTime >= 1.0f) {
             if (incomming.size() < 5) {
                 Obstical *neowObsical = new Obstical(obsticalArrayID, (3 * 12));
                 incomming.push_back(*neowObsical);
             }
             myPlayer->update();
-            for (vector<Flaw>::iterator it = flaw.begin(); it != flaw.end(); it++) {
+            for (vector<Flaw>::iterator it = flaw.begin(); it < flaw.end(); it++) {
                 it->update();
                 if (!it->getActive()) {
                     flaw.erase(it);
-                    flaw.push_back(*(new Flaw(surfaceArrayID, 7, 100)));
+                    flaw.push_back(*(new Flaw(surfaceArrayID, 7, 120)));
                 }
             }
-            for (vector<Obstical>::iterator it = incomming.begin(); it != incomming.end(); it++) {
+            for (vector<Obstical>::iterator it = incomming.begin(); it < incomming.end(); it++) {
                 it->update();
                 if (sqrt(pow(it->getX() - myPlayer->getX(), 2) + pow(it->getY() - myPlayer->getY(), 2) +
                          pow(it->getZ() - myPlayer->getZ(), 2)) < 2) {
@@ -280,8 +290,6 @@ void save_ascii() {
 }
 
 void RenderText(GLuint programID, std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color) {
-    // Activate corresponding render state
-
     glUseProgram(programID);
     glUniformMatrix4fv(glGetUniformLocation(programID, "Pro"), 1, GL_FALSE, &g_textProjection[0][0]);
     glUniform3f(glGetUniformLocation(programID, "textColor"), color.x, color.y, color.z);
@@ -324,4 +332,23 @@ void RenderText(GLuint programID, std::string text, GLfloat x, GLfloat y, GLfloa
     }
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+GLuint load_texture(string file) {
+    int width;
+    int height;
+
+    GLuint texture;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    unsigned char *image = SOIL_load_image(file.c_str(), &width, &height, 0, SOIL_LOAD_RGB);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    SOIL_free_image_data(image);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    return (texture);
 }

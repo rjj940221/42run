@@ -274,6 +274,7 @@ CMakeFiles/42run.dir/src/object.cpp.o.provides.build: CMakeFiles/42run.dir/src/o
 42run: CMakeFiles/42run.dir/build.make
 42run: ../Framework/Glfw/lib/libglfw3.a
 42run: ../Framework/Glew/lib/libGLEW.a
+42run: ../Framework/Soil/lib/libSOIL.a
 42run: ../Framework/FreeType/lib/libfreetype.a
 42run: CMakeFiles/42run.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/zfs-student-6/users/rojones/Documents/42run/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable 42run"

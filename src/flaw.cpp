@@ -14,7 +14,7 @@ Flaw::Flaw(GLuint bufferID, int numFace, GLfloat z){
 }
 
 void Flaw::update() {
-    z -= 0.25f;
-    if (z < -4)
+    z -= 0.25;
+    if (z < -6)
         active = false;
 }

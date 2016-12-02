@@ -20,6 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../Framework/Glfw/include"
   "../Framework/Glew/include"
   "../Framework/glm/include"
+  "../Framework/Soil/include"
   "../Framework/FreeType/include/freetype2"
   "../includes"
   )

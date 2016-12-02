@@ -13,7 +13,7 @@ Player::Player(GLuint bufferID, int numFace) {
     this->x = 0;
     this->y = 0;
     this->z = 0;
-    this->modle = glm::mat4(1.0f);
+    this->model = glm::mat4(1.0f);
     this->_jump = false;
     this->bufferID = bufferID;
     this->numFace = numFace;
