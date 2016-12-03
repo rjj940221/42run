@@ -7,6 +7,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/42run.dir/src/obstical.cpp.o"
   "CMakeFiles/42run.dir/src/flaw.cpp.o"
   "CMakeFiles/42run.dir/src/object.cpp.o"
+  "CMakeFiles/42run.dir/src/wall.cpp.o"
+  "CMakeFiles/42run.dir/src/ceiling.cpp.o"
+  "CMakeFiles/42run.dir/src/room.cpp.o"
   "42run.pdb"
   "42run"
 )

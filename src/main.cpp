@@ -6,7 +6,6 @@ using namespace std;
 Player *myPlayer;
 int UPDATES_SECOND = 60;
 GLFWwindow *g_window;
-//FTGLPixmapFont g_font("/home/user/Arial.ttf");
 mat4 g_projection = glm::perspective(glm::radians(60.0f), (float) WIDTH / (float) HEIGHT, 0.1f, 500.0f);
 glm::mat4 g_textProjection = glm::ortho(0.0f, static_cast<GLfloat>(WIDTH), 0.0f, static_cast<GLfloat>(HEIGHT));
 mat4 g_view = glm::lookAt(glm::vec3(0, 2, -6), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
@@ -155,21 +154,16 @@ int main(void) {
     GLuint playerArrayID;
     GLuint surfaceArrayID;
     GLuint programID;
-    GLuint textureProgramID;
-    GLint matrixID;
-    GLint lightColID;
-    GLint lightPosID;
-    GLint texturMatrixID;
-    GLint modelID;
-    GLint viewPosID;
-    GLint texturID;
-    GLint isTexturedID;
+    GLuint texturID;
+    GLuint wallTextureID;
+    vector<t_light> lights;
     vector<Obstical> incomming;
     vector<Flaw> flaw;
 
 
     if (!init())
         return (EXIT_FAILURE);
+
     glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
     obsticalArrayID = bind_data(g_vertex_buffer_obstical, sizeof(g_vertex_buffer_obstical));
     playerArrayID = bind_data(g_vertex_buffer_player, sizeof(g_vertex_buffer_player));
@@ -178,21 +172,12 @@ int main(void) {
     for (int i = 0; i <= 120; i += 6) {
         Flaw *nFlaw = new Flaw(surfaceArrayID, 6, i);
         flaw.push_back(*nFlaw);
+        if (rand() % 2)
+            lights.push_back({vec3((rand() % 3 - 2),4,i), vec3(1, 1, 0.8), vec3(1,1,0.8), vec3(0.8,0.8,0.8), 1.0f, 0.2, 0.032});
     }
     programID = LoadShaders("vertex.glsl", "fragment.glsl");
-    matrixID = glGetUniformLocation(programID, "MVP");
-    modelID = glGetUniformLocation(programID, "model");
-    lightColID = glGetUniformLocation(programID, "lightColor");
-    lightPosID = glGetUniformLocation(programID, "lightPos");
-    viewPosID = glGetUniformLocation(programID, "viewPos");
-    isTexturedID = glGetUniformLocation(programID, "isTextured");
-
-    glUniform1i(glGetUniformLocation(programID, "test"), 1);
-
-
-    /*textureProgramID = LoadShaders("textureVertex.glsl", "textureFragment.glsl");
-    texturMatrixID = glGetUniformLocation(textureProgramID, "MVP");*/
     texturID = load_texture("parkay.jpeg");
+    wallTextureID = load_texture("Red-brick-wall-window.jpg");
     glEnable(GL_DEPTH_TEST);
     glfwSetKeyCallback(g_window, player_key_callback);
     lastTime = glfwGetTime();
@@ -201,20 +186,14 @@ int main(void) {
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         RenderText(g_textProgramID, to_string(myPlayer->getDist()), 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
-        glUseProgram(programID);
+       // useShader(programID, &uniforms);
         deltaTime += (glfwGetTime() - lastTime) * UPDATES_SECOND;
         lastTime = glfwGetTime();
         for (vector<Obstical>::iterator it = incomming.begin(); it < incomming.end(); it++)
-            it->render(isTexturedID, matrixID, modelID, lightColID, lightPosID, viewPosID, -1, vec3(1, 1, 0.9),
-                       vec3(0, 4, 0), vec3(0, 2, -6),
-                       false);
-        //glUseProgram(programID);
+            it->render(programID, -1, lights, vec3(0, 2, -6), false);
         for (vector<Flaw>::iterator it = flaw.begin(); it < flaw.end(); it++)
-            it->render(isTexturedID, matrixID, modelID, lightColID, lightPosID, viewPosID, texturID, vec3(1, 1, 0.9),
-                       vec3(0, 4, 0), vec3(0, 0, 0), true);
-        //glUseProgram(programID);
-        myPlayer->render(isTexturedID, matrixID, modelID, lightColID, lightPosID, viewPosID, -1, vec3(1, 1, 0.9),
-                         vec3(0, 4, 0), vec3(0, 2, -6), false);
+            it->render(programID, wallTextureID, lights, vec3(0, 2, -6), true);
+        myPlayer->render(programID, -1, lights, vec3(0, 2, -6), false);
         while (deltaTime >= 1.0f) {
             if (incomming.size() < 5) {
                 Obstical *neowObsical = new Obstical(obsticalArrayID, (3 * 12));
@@ -225,9 +204,11 @@ int main(void) {
                 it->update();
                 if (!it->getActive()) {
                     flaw.erase(it);
-                    flaw.push_back(*(new Flaw(surfaceArrayID, 7, 120)));
+                    flaw.push_back(*(new Flaw(surfaceArrayID, 7, flaw.end()->getZ()+ 6)));
                 }
             }
+            for (vector<t_light>::iterator light = lights.begin(); light < lights.end(); light++)
+                light->position.z = (light->position.z - 0.25 > -24) ? (GLfloat)(light->position.z - 0.25) : 96;
             for (vector<Obstical>::iterator it = incomming.begin(); it < incomming.end(); it++) {
                 it->update();
                 if (sqrt(pow(it->getX() - myPlayer->getX(), 2) + pow(it->getY() - myPlayer->getY(), 2) +

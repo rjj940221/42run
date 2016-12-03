@@ -11,6 +11,8 @@ Obstical::Obstical(GLuint bufferID, int numFace) {
     x = rand() % 5 - 2;
     y = 0;
     active = true;
+    this->ambient = glm::vec3(0.8, 0.8, 0.8);
+    this->diffuse = glm::vec3(0.8, 0.8, 0.8);
     this->bufferID = bufferID;
     this->numFace = numFace;
 }

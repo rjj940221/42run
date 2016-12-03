@@ -1,19 +1,19 @@
 //
-// Created by Robert JONES on 2016/12/01.
+// Created by Robert JONES on 2016/12/03.
 //
 
 #include "42run.h"
 
-Flaw::Flaw(GLuint bufferID, int numFace, GLfloat z){
+Wall::Wall(GLuint bufferID, int numFace, GLfloat z, GLfloat rotateZ, GLfloat x){
     this->z = z;
-    x = 0;
-    y = -1;
+    this->x = x;
+    this->y = 0;
     active = true;
     this->bufferID = bufferID;
     this->numFace = numFace;
 }
 
-void Flaw::update() {
+void Wall::update() {
     z -= 0.25;
     if (z < -12)
         active = false;

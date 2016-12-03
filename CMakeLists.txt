@@ -6,7 +6,7 @@ project(42run)
 #else(UNIX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g3 -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo")
 #endif(UNIX)
-set(SOURCE_FILES src/main.cpp src/load_shader.cpp src/support.cpp src/obj_loader.cpp src/player.cpp src/obstical.cpp src/flaw.cpp src/object.cpp)
+set(SOURCE_FILES src/main.cpp src/load_shader.cpp src/support.cpp src/obj_loader.cpp src/player.cpp src/obstical.cpp src/flaw.cpp src/object.cpp src/wall.cpp src/ceiling.cpp src/room.cpp)
 add_executable(42run ${SOURCE_FILES})
 
 include_directories(${CMAKE_SOURCE_DIR}/Framework/Glfw/include)

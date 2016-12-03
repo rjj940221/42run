@@ -123,6 +123,33 @@ depend:
 	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/build
 .PHONY : 42run/fast
 
+src/ceiling.o: src/ceiling.cpp.o
+
+.PHONY : src/ceiling.o
+
+# target to build an object file
+src/ceiling.cpp.o:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/ceiling.cpp.o
+.PHONY : src/ceiling.cpp.o
+
+src/ceiling.i: src/ceiling.cpp.i
+
+.PHONY : src/ceiling.i
+
+# target to preprocess a source file
+src/ceiling.cpp.i:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/ceiling.cpp.i
+.PHONY : src/ceiling.cpp.i
+
+src/ceiling.s: src/ceiling.cpp.s
+
+.PHONY : src/ceiling.s
+
+# target to generate assembly for a file
+src/ceiling.cpp.s:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/ceiling.cpp.s
+.PHONY : src/ceiling.cpp.s
+
 src/flaw.o: src/flaw.cpp.o
 
 .PHONY : src/flaw.o
@@ -312,6 +339,33 @@ src/player.cpp.s:
 	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/player.cpp.s
 .PHONY : src/player.cpp.s
 
+src/room.o: src/room.cpp.o
+
+.PHONY : src/room.o
+
+# target to build an object file
+src/room.cpp.o:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/room.cpp.o
+.PHONY : src/room.cpp.o
+
+src/room.i: src/room.cpp.i
+
+.PHONY : src/room.i
+
+# target to preprocess a source file
+src/room.cpp.i:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/room.cpp.i
+.PHONY : src/room.cpp.i
+
+src/room.s: src/room.cpp.s
+
+.PHONY : src/room.s
+
+# target to generate assembly for a file
+src/room.cpp.s:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/room.cpp.s
+.PHONY : src/room.cpp.s
+
 src/support.o: src/support.cpp.o
 
 .PHONY : src/support.o
@@ -339,6 +393,33 @@ src/support.cpp.s:
 	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/support.cpp.s
 .PHONY : src/support.cpp.s
 
+src/wall.o: src/wall.cpp.o
+
+.PHONY : src/wall.o
+
+# target to build an object file
+src/wall.cpp.o:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/wall.cpp.o
+.PHONY : src/wall.cpp.o
+
+src/wall.i: src/wall.cpp.i
+
+.PHONY : src/wall.i
+
+# target to preprocess a source file
+src/wall.cpp.i:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/wall.cpp.i
+.PHONY : src/wall.cpp.i
+
+src/wall.s: src/wall.cpp.s
+
+.PHONY : src/wall.s
+
+# target to generate assembly for a file
+src/wall.cpp.s:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/wall.cpp.s
+.PHONY : src/wall.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -348,6 +429,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 42run"
+	@echo "... src/ceiling.o"
+	@echo "... src/ceiling.i"
+	@echo "... src/ceiling.s"
 	@echo "... src/flaw.o"
 	@echo "... src/flaw.i"
 	@echo "... src/flaw.s"
@@ -369,9 +453,15 @@ help:
 	@echo "... src/player.o"
 	@echo "... src/player.i"
 	@echo "... src/player.s"
+	@echo "... src/room.o"
+	@echo "... src/room.i"
+	@echo "... src/room.s"
 	@echo "... src/support.o"
 	@echo "... src/support.i"
 	@echo "... src/support.s"
+	@echo "... src/wall.o"
+	@echo "... src/wall.i"
+	@echo "... src/wall.s"
 .PHONY : help
 
 

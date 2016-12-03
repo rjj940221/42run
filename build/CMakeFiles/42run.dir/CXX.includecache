@@ -827,6 +827,8 @@ vector
 -
 map
 -
+iostream
+-
 
 ../includes/support.h
 unistd.h
@@ -879,6 +881,8 @@ vector
 -
 map
 -
+iostream
+-
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/includes/support.h
 unistd.h
@@ -904,6 +908,10 @@ stdlib.h
 stdio.h
 -
 
+/nfs/zfs-student-6/users/rojones/Documents/42run/src/ceiling.cpp
+42run.h
+/nfs/zfs-student-6/users/rojones/Documents/42run/src/42run.h
+
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/flaw.cpp
 42run.h
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/42run.h
@@ -924,7 +932,7 @@ vector
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/object.cpp
 42run.h
-/nfs/zfs-student-6/users/rojones/Documents/42run/src/42run.h
+-
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/obstical.cpp
 42run.h
@@ -934,7 +942,15 @@ vector
 42run.h
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/42run.h
 
+/nfs/zfs-student-6/users/rojones/Documents/42run/src/room.cpp
+42run.h
+-
+
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/support.cpp
 ../includes/support.h
 /nfs/zfs-student-6/users/rojones/Documents/42run/includes/support.h
+
+/nfs/zfs-student-6/users/rojones/Documents/42run/src/wall.cpp
+42run.h
+/nfs/zfs-student-6/users/rojones/Documents/42run/src/42run.h
 
