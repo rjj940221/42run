@@ -31,10 +31,11 @@ void Object::render(GLuint programID, GLuint texturID, vector<t_light> lights, v
     glEnableVertexAttribArray(2);
     glEnableVertexAttribArray(3);
     model = glm::mat4(1.0f);
-    model = rotate(model, rotateX, vec3{1, 0, 0});
-    model = rotate(model, rotateY, vec3{0, 1, 0});
-    model = rotate(model, rotateZ, vec3{0, 0, 1});
+
     model = translate(model, vec3{x, y, z});
+    model = rotate(model, (float)(DEGREES_RADIANS(rotateX)), vec3{1, 0, 0});
+    model = rotate(model, (float) (DEGREES_RADIANS(rotateY)), vec3{0, 1, 0});
+    model = rotate(model, (float) (DEGREES_RADIANS(rotateZ)), vec3{0, 0, 1});
     glm::mat4 mvp = g_projection * g_view * model;
     glUniformMatrix4fv(glGetUniformLocation(programID, "MVP"), 1, GL_FALSE, &mvp[0][0]);
     glUniformMatrix4fv(glGetUniformLocation(programID, "model"), 1, GL_FALSE, &model[0][0]);

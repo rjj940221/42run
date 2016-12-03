@@ -158,7 +158,9 @@ int main(void) {
     GLuint wallTextureID;
     vector<t_light> lights;
     vector<Obstical> incomming;
-    vector<Flaw> flaw;
+    GLuint textureIDs[4];
+    //vector<Flaw> flaw;
+    vector<Room> rooms;
 
 
     if (!init())
@@ -168,10 +170,15 @@ int main(void) {
     obsticalArrayID = bind_data(g_vertex_buffer_obstical, sizeof(g_vertex_buffer_obstical));
     playerArrayID = bind_data(g_vertex_buffer_player, sizeof(g_vertex_buffer_player));
     surfaceArrayID = bind_data(g_vertex_buffer_surface, sizeof(g_vertex_buffer_surface));
+    textureIDs[0] = load_texture("parkay.jpeg");
+    textureIDs[1] = load_texture("celing.jpeg");
+    textureIDs[2] = load_texture("Red-brick-wall-window.jpg");
+    textureIDs[3] = load_texture("Red-brick-wall-window.jpg");
     myPlayer = new Player(playerArrayID, 3);
     for (int i = 0; i <= 120; i += 6) {
-        Flaw *nFlaw = new Flaw(surfaceArrayID, 6, i);
-        flaw.push_back(*nFlaw);
+        rooms.push_back(Room(i,surfaceArrayID,textureIDs));
+        /*Flaw *nFlaw = new Flaw(surfaceArrayID, 6, i);
+        flaw.push_back(*nFlaw);*/
         if (rand() % 2)
             lights.push_back({vec3((rand() % 3 - 2),4,i), vec3(1, 1, 0.8), vec3(1,1,0.8), vec3(0.8,0.8,0.8), 1.0f, 0.2, 0.032});
     }
@@ -186,13 +193,14 @@ int main(void) {
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         RenderText(g_textProgramID, to_string(myPlayer->getDist()), 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
-       // useShader(programID, &uniforms);
         deltaTime += (glfwGetTime() - lastTime) * UPDATES_SECOND;
         lastTime = glfwGetTime();
         for (vector<Obstical>::iterator it = incomming.begin(); it < incomming.end(); it++)
             it->render(programID, -1, lights, vec3(0, 2, -6), false);
-        for (vector<Flaw>::iterator it = flaw.begin(); it < flaw.end(); it++)
-            it->render(programID, wallTextureID, lights, vec3(0, 2, -6), true);
+        for (vector<Room>::iterator it = rooms.begin(); it < rooms.end(); it++)
+            it->render(lights, programID, vec3(0, 2, -6));
+        /*for (vector<Flaw>::iterator it = flaw.begin(); it < flaw.end(); it++)
+            it->render(programID, wallTextureID, lights, vec3(0, 2, -6), true);*/
         myPlayer->render(programID, -1, lights, vec3(0, 2, -6), false);
         while (deltaTime >= 1.0f) {
             if (incomming.size() < 5) {
@@ -200,11 +208,17 @@ int main(void) {
                 incomming.push_back(*neowObsical);
             }
             myPlayer->update();
-            for (vector<Flaw>::iterator it = flaw.begin(); it < flaw.end(); it++) {
+      /*      for (vector<Flaw>::iterator it = flaw.begin(); it < flaw.end(); it++) {
                 it->update();
                 if (!it->getActive()) {
                     flaw.erase(it);
                     flaw.push_back(*(new Flaw(surfaceArrayID, 7, flaw.end()->getZ()+ 6)));
+                }
+            }*/
+            for (vector<Room>::iterator room = rooms.begin();  room < rooms.end(); ++room) {
+                if (!(room->update())) {
+                    rooms.erase(room);
+                    rooms.push_back(Room(rooms.end()->getZ() + 6,surfaceArrayID,textureIDs));
                 }
             }
             for (vector<t_light>::iterator light = lights.begin(); light < lights.end(); light++)

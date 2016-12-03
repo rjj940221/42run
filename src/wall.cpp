@@ -7,7 +7,8 @@
 Wall::Wall(GLuint bufferID, int numFace, GLfloat z, GLfloat rotateZ, GLfloat x){
     this->z = z;
     this->x = x;
-    this->y = 0;
+    this->y = 2;
+    this->rotateZ = rotateZ;
     active = true;
     this->bufferID = bufferID;
     this->numFace = numFace;

@@ -27,6 +27,7 @@
 #define BUFF_SIZE 32
 #define WIDTH 800
 #define HEIGHT 600
+#define DEGREES_RADIANS(x) (x * M_PI) / 180
 
 
 extern glm::mat4 modle;
@@ -210,6 +211,7 @@ public:
 
 class Room{
 private:
+    float z;
     Flaw *flaw;
     Ceiling *ceiling;
     Wall *leftWall;
@@ -217,6 +219,7 @@ private:
     GLuint *textureIDs;
     bool active;
 public:
+    float getZ(){ return (this->z);};
     bool update();
     void render(std::vector<t_light> lights, GLuint programID, glm::vec3 viewPos);
     Room(GLfloat z, GLuint surfaceArrayID, GLuint textureIDs[4]);

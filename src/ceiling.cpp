@@ -4,7 +4,7 @@
 Ceiling::Ceiling(GLuint bufferID, int numFace, GLfloat z){
     this->z = z;
     x = 0;
-    y = 6;
+    y = 5;
     active = true;
     this->bufferID = bufferID;
     this->numFace = numFace;
