@@ -801,11 +801,7 @@ detail/func_vector_relational.hpp
 ../Framework/glm/include/glm/detail/func_vector_relational.hpp
 
 ../includes/42run.h
-iostream
--
 unistd.h
--
-iostream
 -
 fstream
 -
@@ -828,6 +824,34 @@ vector
 map
 -
 iostream
+-
+structs.h
+-
+globals.h
+-
+
+../includes/globals.h
+
+../includes/structs.h
+string
+-
+fstream
+-
+sstream
+-
+iostream
+-
+vector
+-
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+GL/glew.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
 -
 
 ../includes/support.h
@@ -855,11 +879,7 @@ stdio.h
 -
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/includes/42run.h
-iostream
--
 unistd.h
--
-iostream
 -
 fstream
 -
@@ -882,6 +902,30 @@ vector
 map
 -
 iostream
+-
+structs.h
+-
+globals.h
+-
+
+/nfs/zfs-student-6/users/rojones/Documents/42run/includes/mesh.h
+structs.h
+-
+globals.h
+-
+fstream
+-
+sstream
+-
+iostream
+-
+vector
+-
+GL/glew.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
 -
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/includes/support.h
@@ -925,6 +969,10 @@ vector
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/main.cpp
 42run.h
 -
+
+/nfs/zfs-student-6/users/rojones/Documents/42run/src/mesh.cpp
+../includes/mesh.h
+/nfs/zfs-student-6/users/rojones/Documents/42run/includes/mesh.h
 
 /nfs/zfs-student-6/users/rojones/Documents/42run/src/obj_loader.cpp
 ../includes/42run.h

@@ -64,7 +64,6 @@ void Object::render(GLuint programID, GLuint texturID, vector<t_light> lights, v
         glUniform1f(glGetUniformLocation(programID, temp.c_str()), light->quadratic);
         i++;
     }
-
     glUniform3f(glGetUniformLocation(programID, "viewPos"), viewPos.x, viewPos.y, viewPos.z);
     glUniform1i(glGetUniformLocation(programID, "isTextured"), isTextured);
     glUniform3f(glGetUniformLocation(programID, "material.ambient"), ambient.x, ambient.y, ambient.z);

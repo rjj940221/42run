@@ -134,11 +134,12 @@ GLuint bind_data(t_buffer_element *data, int size) {
     glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(t_buffer_element), (void *) 0);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(t_buffer_element),
-                          (void *) (offsetof(t_buffer_element, color)));
+                          (void *) (offsetof(t_buffer_element, normal)));
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(t_buffer_element),
                           (void *) (offsetof(t_buffer_element, text)));
+
     glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(t_buffer_element),
-                          (void *) (offsetof(t_buffer_element, normal)));
+                          (void *) (offsetof(t_buffer_element, color)));
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
@@ -176,11 +177,13 @@ int main(void) {
     textureIDs[3] = load_texture("Red-brick-wall-window.jpg");
     myPlayer = new Player(playerArrayID, 3);
     for (int i = 0; i <= 120; i += 6) {
-        rooms.push_back(Room(i,surfaceArrayID,textureIDs));
+        rooms.push_back(Room(i, surfaceArrayID, textureIDs));
         /*Flaw *nFlaw = new Flaw(surfaceArrayID, 6, i);
         flaw.push_back(*nFlaw);*/
         if (rand() % 2)
-            lights.push_back({vec3((rand() % 3 - 2),4,i), vec3(1, 1, 0.8), vec3(1,1,0.8), vec3(0.8,0.8,0.8), 1.0f, 0.2, 0.032});
+            lights.push_back(
+                    {vec3((rand() % 3 - 2), 4, i), vec3(1, 1, 0.8), vec3(1, 1, 0.8), vec3(0.8, 0.8, 0.8), 1.0f, 0.2,
+                     0.032});
     }
     programID = LoadShaders("vertex.glsl", "fragment.glsl");
     texturID = load_texture("parkay.jpeg");
@@ -208,21 +211,21 @@ int main(void) {
                 incomming.push_back(*neowObsical);
             }
             myPlayer->update();
-      /*      for (vector<Flaw>::iterator it = flaw.begin(); it < flaw.end(); it++) {
-                it->update();
-                if (!it->getActive()) {
-                    flaw.erase(it);
-                    flaw.push_back(*(new Flaw(surfaceArrayID, 7, flaw.end()->getZ()+ 6)));
-                }
-            }*/
-            for (vector<Room>::iterator room = rooms.begin();  room < rooms.end(); ++room) {
+            /*      for (vector<Flaw>::iterator it = flaw.begin(); it < flaw.end(); it++) {
+                      it->update();
+                      if (!it->getActive()) {
+                          flaw.erase(it);
+                          flaw.push_back(*(new Flaw(surfaceArrayID, 7, flaw.end()->getZ()+ 6)));
+                      }
+                  }*/
+            for (vector<Room>::iterator room = rooms.begin(); room < rooms.end(); ++room) {
                 if (!(room->update())) {
                     rooms.erase(room);
-                    rooms.push_back(Room(rooms.end()->getZ() + 6,surfaceArrayID,textureIDs));
+                    rooms.push_back(Room(rooms.end()->getZ() + 6, surfaceArrayID, textureIDs));
                 }
             }
             for (vector<t_light>::iterator light = lights.begin(); light < lights.end(); light++)
-                light->position.z = (light->position.z - 0.25 > -24) ? (GLfloat)(light->position.z - 0.25) : 96;
+                light->position.z = (light->position.z - 0.25 > -24) ? (GLfloat) (light->position.z - 0.25) : 96;
             for (vector<Obstical>::iterator it = incomming.begin(); it < incomming.end(); it++) {
                 it->update();
                 if (sqrt(pow(it->getX() - myPlayer->getX(), 2) + pow(it->getY() - myPlayer->getY(), 2) +

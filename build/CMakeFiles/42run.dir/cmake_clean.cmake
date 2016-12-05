@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42run.dir/src/wall.cpp.o"
   "CMakeFiles/42run.dir/src/ceiling.cpp.o"
   "CMakeFiles/42run.dir/src/room.cpp.o"
+  "CMakeFiles/42run.dir/src/mesh.cpp.o"
   "42run.pdb"
   "42run"
 )

@@ -231,6 +231,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/mesh.o: src/mesh.cpp.o
+
+.PHONY : src/mesh.o
+
+# target to build an object file
+src/mesh.cpp.o:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/mesh.cpp.o
+.PHONY : src/mesh.cpp.o
+
+src/mesh.i: src/mesh.cpp.i
+
+.PHONY : src/mesh.i
+
+# target to preprocess a source file
+src/mesh.cpp.i:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/mesh.cpp.i
+.PHONY : src/mesh.cpp.i
+
+src/mesh.s: src/mesh.cpp.s
+
+.PHONY : src/mesh.s
+
+# target to generate assembly for a file
+src/mesh.cpp.s:
+	$(MAKE) -f CMakeFiles/42run.dir/build.make CMakeFiles/42run.dir/src/mesh.cpp.s
+.PHONY : src/mesh.cpp.s
+
 src/obj_loader.o: src/obj_loader.cpp.o
 
 .PHONY : src/obj_loader.o
@@ -441,6 +468,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/mesh.o"
+	@echo "... src/mesh.i"
+	@echo "... src/mesh.s"
 	@echo "... src/obj_loader.o"
 	@echo "... src/obj_loader.i"
 	@echo "... src/obj_loader.s"

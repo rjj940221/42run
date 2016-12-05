@@ -5,9 +5,7 @@
 #ifndef INC_42RUN_42RUN_H
 #define INC_42RUN_42RUN_H
 
-#include <iostream>
 #include <unistd.h>
-#include <iostream>
 #include <fstream>
 #include "../includes/support.h"
 // GLEW
@@ -24,19 +22,21 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include <structs.h>
+#include <globals.h>
 #define BUFF_SIZE 32
 #define WIDTH 800
 #define HEIGHT 600
 #define DEGREES_RADIANS(x) (x * M_PI) / 180
 
 
-extern glm::mat4 modle;
+/*extern glm::mat4 modle;
 extern glm::vec3 g_rotate;
 extern glm::mat4 g_projection;
 extern glm::mat4 g_view;
-extern GLFWwindow *g_window;
+extern GLFWwindow *g_window;*/
 
-typedef struct {
+/*typedef struct {
     GLfloat point[3];
     GLfloat normal[3];
     GLfloat color[3];
@@ -59,28 +59,7 @@ typedef struct {
     float     linear;
     float     quadratic;
 
-} t_light;
-
-typedef struct {
-    GLint matrixID;
-    GLint modelID;
-    GLint viewPosID;
-    GLuint texturID;
-    GLint isTexturedID;
-    GLint matAmbiantID;
-    GLint matDiffuseID;
-    GLint matSpecularID;
-    GLint matShinyID;
-    GLint lightPosID;
-    GLint lightAmbientID;
-    GLint lightSpecularID;
-    GLint lightDiffuseID;
-    GLint lightConstantID;
-    GLint lightLinearID;
-    GLint lightQuadraticID;
-} t_shader_uniforms;
-
-
+} t_light;*/
 
 class Object {
 protected:
@@ -232,8 +211,6 @@ void player_key_callback(GLFWwindow *window, int key, int scancode, int action, 
 bool loadOBJ(const char *path, std::vector<t_buffer_element> *obj);
 
 GLuint LoadShaders(const char *vertex_file_path, const char *fragment_file_path);
-
-void useShader(GLuint programID, t_shader_uniforms *uniforms);
 
 bool removeObstical(Obstical &o);
 
