@@ -1,0 +1,11 @@
+prefix=/nfs/zfs-student-6/users/rojones/.brew/Cellar/assimp/3.3.1
+exec_prefix=/nfs/zfs-student-6/users/rojones/.brew/Cellar/assimp/3.3.1/bin
+libdir=/nfs/zfs-student-6/users/rojones/.brew/Cellar/assimp/3.3.1/lib
+includedir=/nfs/zfs-student-6/users/rojones/.brew/Cellar/assimp/3.3.1/include/assimp
+
+Name: Assimp
+Description: Import various well-known 3D model formats in an uniform manner.
+Version: 3.3.1
+Libs: -L${libdir} -lassimp
+Libs.private:  -lz
+Cflags: -I${includedir}
