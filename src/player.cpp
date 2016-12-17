@@ -4,13 +4,25 @@
 
 #include <player.h>
 
-Player::Player(GLchar *Path) : Model(Path){
+Player::Player(){
+    jumpModel = new Model((GLchar *) "Models/nanosuit/nanosuitjump.obj");
+    leftModel = new Model((GLchar *) "Models/nanosuit/nanosuitleft.obj");
+    rightModel = new Model((GLchar *) "Models/nanosuit/nanosuitright.obj");
+    side = 0;
     this->translation = glm::vec3(0,-3,0);
     this->dist = 0;
     this->_jump = false;
 }
 
 void Player::update() {
+    static int swich = 0;
+    if (swich == 20)
+    {
+        swich = 0;
+        side = (side == 0)? 1 : 0;
+    }
+    else
+        swich++;
     this->dist += 0.25;
     if (_jump)
         up(1);
@@ -31,7 +43,14 @@ void Player::Draw(Shader shader, glm::mat4 projection, glm::mat4 view) {
     glUniformMatrix4fv(glGetUniformLocation(shader.getProgram(), "model"), 1, GL_FALSE, &model[0][0]);
     glm::mat4 MVP = projection * view * model;
     glUniformMatrix4fv(glGetUniformLocation(shader.getProgram(), "MVP"), 1, GL_FALSE, &MVP[0][0]);
-    Model::Draw(shader);
+    if (_jump || translation.y > -3)
+        jumpModel->Draw(shader);
+    else {
+        if (side == 1)
+            leftModel->Draw(shader);
+        else
+            rightModel->Draw(shader);
+    }
 }
 
 void Player::up(int height) {

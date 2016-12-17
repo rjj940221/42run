@@ -8,10 +8,14 @@
 #include "structs.h"
 #include <model.h>
 
-class Player : public Model{
+class Player{
 public:
+    int side;
+    Model *leftModel;
+    Model *rightModel;
+    Model *jumpModel;
     bool alive;
-    Player(GLchar* Path);
+    Player();
     void update();
     void Draw(Shader shader, glm::mat4 projection, glm::mat4 view);
     void up(int height);

@@ -4,8 +4,9 @@
 
 #include <obstical.h>
 
-Obstical::Obstical(GLchar *path, glm::vec3 location) : Model(path) {
+Obstical::Obstical(GLchar *path, glm::vec3 location, glm::vec3 rotation) : Model(path) {
     this->translation = location;
+    this->rotation = rotation;
     this->active = true;
 }
 

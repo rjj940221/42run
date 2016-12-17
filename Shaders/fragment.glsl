@@ -70,8 +70,8 @@ void main()
     if (isTextured)
     {
         vec3 tcolor = vec3(texture(texture_diffuse1, TexCoords));
-        color = vec4((lightEfect) * tcolor, 1.0f);
-        //color = vec4(texture(texture_diffuse1, TexCoords));
+        //color = vec4((lightEfect) * tcolor, 1.0f);
+        color = vec4(texture(texture_diffuse1, TexCoords));
     }
     else
         color = vec4((lightEfect) * fragmentColor, 1.0f);

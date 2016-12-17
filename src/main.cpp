@@ -67,7 +67,7 @@ bool gameLoop(vector<t_light> *lights, vector<Room> *rooms, vector<Obstical> *ob
         if (!it->active) {
             rooms->erase(it);
             rooms->push_back(
-                    Room((GLchar *) "../Models/room/room.obj", glm::vec3(0, 0, rooms->end()->getLocation().z + 6)));
+                    Room((GLchar *) "Models/room/room.obj", glm::vec3(0, 0, rooms->end()->getLocation().z + 6)));
         }
     }
     for (vector<Obstical>::iterator it = obsticals->begin(); it < obsticals->end(); it++) {
@@ -80,7 +80,7 @@ bool gameLoop(vector<t_light> *lights, vector<Room> *rooms, vector<Obstical> *ob
         if (!it->active) {
             obsticals->erase(it);
             obsticals->push_back(
-                    Obstical((GLchar *) "../Models/obstical/block.obj", glm::vec3((rand() % 5 - 2), -3, 120)));
+                    Obstical((GLchar *) "Models/office_chair/office_chair.obj", glm::vec3((rand() % 5 - 2), -3, 120), glm::vec3(0,rand() % 360, 0)));
         }
 
     }
@@ -95,25 +95,25 @@ void start() {
     for (int i = 0; i < 120; i += 6) {
         if (rand() % 2 && i > 6)
             obsticals.push_back(
-                    Obstical((GLchar *) "../Models/obstical/block.obj", glm::vec3((rand() % 5 - 2), -3, i)));
+                    Obstical((GLchar *) "Models/office_chair/office_chair.obj", glm::vec3((rand() % 5 - 2), -3, i), glm::vec3(0,rand() % 360, 0)));
         if (rand() % 2)
             lights.push_back(
                     {glm::vec3((rand() % 5 - 2), 4, i), glm::vec3(1, 1, 0.8), glm::vec3(1, 1, 0.8),
                      glm::vec3(0.8, 0.8, 0.8), 1.0f, 0.2,
                      0.032});
-        rooms.push_back(Room((GLchar *) "../Models/room/room.obj", glm::vec3(0, 0, i)));
+        rooms.push_back(Room((GLchar *) "Models/room/room.obj", glm::vec3(0, 0, i)));
     }
 }
 
 int main() {
-    glm::vec3 viewPos = {0, 1, -6};
+    glm::vec3 viewPos = {0, 0, -6};
     oglInit();
 
 
     glm::mat4 projection = glm::perspective(glm::radians(60.0f), (float) WIDTH / (float) HEIGHT, 0.1f, 500.0f);
-    glm::mat4 view = glm::lookAt(viewPos, glm::vec3(0, -1, 0), glm::vec3(0, 1, 0));
+    glm::mat4 view = glm::lookAt(viewPos, glm::vec3(0, -3, 0), glm::vec3(0, 1, 0));
     Shader shader("Shaders/vertex.glsl", "Shaders/fragment.glsl");
-    myPlayer = new Player((GLchar *) "../Models/nanosuit/nanosuit.obj");
+    myPlayer = new Player();
     start();
 
     while (!glfwWindowShouldClose(g_window)) {
@@ -139,7 +139,7 @@ int main() {
         while (deltaTime >= 1.0f) {
             if (gameActive) {
                 gameActive = gameLoop(&lights, &rooms, &obsticals);
-                if (myPlayer->getDist() % 100 == 0 && updates_sec < 100)
+                if (myPlayer->getDist() % 100 == 0 && updates_sec < 200)
                     updates_sec += 1;
             } else {
                 g_textShader->useShader();
